@@ -6,6 +6,7 @@ sudo apt-get install zsh -y \
 sudo echo deb http://ftp.debian.org/debian stretch-backports main >> /etc/apt/sources.list
 sudo apt-get update \
 sudo apt-get install -t stretch-backports tmux -y \
+sudo apt-get install cron -y \
 
 #change hostname of container
 sudo sed -i "s/127\.0\.1\.1.*/127\.0\.1\.1\t${newname}/" /etc/hosts
@@ -25,5 +26,8 @@ wget https://download2.rstudio.org/rstudio-server-stretch-1.1.453-amd64.deb -y \
 sudo gdebi rstudio-server-stretch-1.1.453-amd64.deb -y \
 
 #install python tools
-sudo apt-get install idle -y
+sudo apt-get install idle -y \
 
+#gh config
+git config --global user.email bradfox2@gmail.com \
+git config --global user.name "brad" \
